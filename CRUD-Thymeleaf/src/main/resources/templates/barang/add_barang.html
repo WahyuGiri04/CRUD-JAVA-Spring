@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Tambah Barang</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Barang</h1>
+    <hr>
+    <h2>Save Barang</h2>
+
+    <form action="#" th:action="@{/save}" th:object="${Barang}"
+          method="POST">
+        <input type="text" th:field="*{namaBarang}"
+               placeholder="Nama Barang" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{jumlahBarang}"
+               placeholder="Jumlah Barang" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Baran</button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/}"> Back to Barang List</a>
+</div>
+</body>
+</html>
